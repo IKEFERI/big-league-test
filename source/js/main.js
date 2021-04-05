@@ -33,7 +33,6 @@ const preloaderLogo = document.querySelector('.preloader .img-wrap');
 const startButton = document.querySelector('.preloader .start-button');
 const globalSiteWrapper = document.querySelector('.wrapper');
 const bodyHtml = document.querySelector('html');
-// bodyHtml.style.cssText = `padding-right: ${scrollBarWidth}px`;
 
 
 const fadeInCss = (duration) => `transition: visibility ease ${duration}, opacity ease ${duration};opacity: 1;visibility:visible;`;
@@ -69,7 +68,6 @@ const closePreloader = () => {
     preloader.style.cssText += `display:none;`;
     globalSiteWrapperToggle();
     globalSiteWrapper.style.cssText = `transition: opacity ease 1.2s;opacity: 1;`;
-    // bodyHtml.style.cssText = `padding-right: 0`;
     preloader.removeEventListener('click', closePreloader);
     document.removeEventListener('keydown', closePreloader);
   }, duration * 1000 + 50);
@@ -85,10 +83,8 @@ const burgerMenuHandler = (duration) => {
 
   burgerMenuButton.classList.toggle('button-burger-mobile_active');
   if (!burgerMenu.classList.contains('nav__list-mobile_active')) {
-    // bodyHtml.style.cssText = `padding-right: ${scrollBarWidth}px`;
 
     const paddingRight = scrollBarWidth + +/\d+/.exec(window.getComputedStyle(headerTopLine).paddingRight);
-    // headerTopLine.style.cssText = `padding-right: ${paddingRight}px`;
 
     bodyHtml.classList.toggle('scroll-lock');
     burgerMenu.classList.toggle('nav__list-mobile_active');
@@ -100,8 +96,6 @@ const burgerMenuHandler = (duration) => {
     setTimeout(() => {
       burgerMenu.classList.toggle('nav__list-mobile_active');
       bodyHtml.classList.toggle('scroll-lock');
-
-      // bodyHtml.style.cssText = `padding-right: 0`;
       headerTopLine.removeAttribute('style');
     }, duration * 1000 + 50);
   }
@@ -112,7 +106,6 @@ const burgerMenuCleaner = () => {
   burgerMenu.removeAttribute('style');
   burgerMenu.classList.remove('nav__list-mobile_active');
   bodyHtml.classList.remove('scroll-lock');
-  // bodyHtml.style.cssText = `padding-right: 0`;
   headerTopLine.removeAttribute('style');
 }
 
