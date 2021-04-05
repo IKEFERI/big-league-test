@@ -1,3 +1,3 @@
 ## Тестовое задание Большой Лиги
 
-[a link](http://league.oneviewport.ru/) - ссылка для просмотра.
+[league.oneviewport.ru](http://league.oneviewport.ru/) - ссылка для просмотра.
