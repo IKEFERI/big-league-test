@@ -14,6 +14,9 @@
 
   @include viewport--sm {
     padding: 0 16px;
+    &.swiper-container{
+      padding: 0;
+    }
   }
 
   &--no-padding {

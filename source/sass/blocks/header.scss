@@ -7,6 +7,7 @@
   justify-content: space-between;
   width: 100%;
   height: $top-header-height;
+  z-index: 10;
   @include viewport--sm {
     position: fixed;
   }
