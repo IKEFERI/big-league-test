@@ -1,0 +1,123 @@
+.home-header {
+  background-image: url("data:image/svg+xml,%3Csvg width='670' height='653' viewBox='0 0 670 653' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.02' d='M491.083 653.329L491.316 654H492.027H667H668.458L667.933 652.64L416.69 1.63995L416.443 1H415.757H335H254.243H253.558L253.311 1.6393L2.06732 651.3L1.54109 652.66H3H170.496H171.212L171.442 651.982L213.086 529.426H447.947L491.083 653.329ZM406.883 406.87H258.64L333.495 191.267L406.883 406.87Z' stroke='black' stroke-width='2'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: 46px;
+  @include viewport--sm {
+    margin-top: 0;
+    background: none;
+  }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.col {
+  flex: 0 0 562px;
+  @include viewport--sm {
+    min-height: 100vh;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.col:nth-of-type(2n) {
+  flex: 1 0 0;
+  @include viewport--sm {
+    background-color: $color-neon-blue;
+    color: #fff;
+    margin: 0 -16px;
+  }
+}
+
+.h1 {
+  font-family: Neue Machina;
+  font-size: 96px;
+  font-weight: normal;
+  line-height: 1;
+  color: $color-neon-blue;
+}
+
+.h2 {
+  font-family: Neue Machina;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 40px;
+  margin-top: 0;
+  max-width: 352px;
+  @include viewport--sm {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+.scene {
+  text-align: center;
+  margin-bottom: 35px;
+  flex: 0 0 100%;
+  @include viewport--sm {
+    svg path {
+      fill: #fff;
+      &.path_dark {
+        fill: #000;
+      }
+      &.path_blue {
+        fill: #2c39f2;
+      }
+      &.path__flag_stroke-black {
+        stroke: #000;
+      }
+    }
+  }
+}
+
+.path__bolt-purple{
+  animation: 1.4s ease-in-out 0s infinite alternate boltscaleplus;
+}
+.path__bolt-red{
+  animation: 1.5s ease-in-out 0s infinite alternate boltscaleminus;
+}
+
+.path__bolt-blue{
+  animation: 1.2s ease-in-out 0s infinite alternate boltscaleminus;
+}
+.path__noise{
+  animation: 0.8s ease-in-out 0s infinite alternate noise;
+
+}
+
+
+@keyframes noise{
+  from{
+    transform: translateX(5px) scaleX(1);
+  }
+  to{
+    transform: translateX(-171px) scaleX(2.1);
+  }
+}
+
+@keyframes boltscaleplus{
+  from{
+    transform: translateY(-10px) scaleY(1);
+  }
+  to{
+    transform: translateY(-55px) scaleY(1.2);
+  }
+}
+
+@keyframes boltscaleminus{
+  from{
+    transform: translateY(0) scaleY(1);
+  }
+  to{
+    transform: translateY(35px) scaleY(0.8);
+  }
+}

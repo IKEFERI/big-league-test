@@ -1,0 +1,108 @@
+.header {
+}
+.header__top-line {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: $top-header-height;
+  @include viewport--sm {
+    position: fixed;
+  }
+}
+.logo {
+  width: 192px;
+  height: auto;
+}
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav__list {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include viewport--sm {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: $top-header-height;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100vh - #{$top-header-height});
+    background-color: #fff;
+    z-index: 10;
+    &.nav__list-mobile_active {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
+    .nav__item {
+      flex: 0 0 100%;
+      text-align: center;
+    }
+  }
+}
+
+.nav__link {
+  display: block;
+  position: relative;
+  padding: 15px 12px;
+  transition: color $default-transition-settings;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  &:hover {
+    color: $color-torch-red;
+  }
+  @include viewport--sm {
+    display: inline-block;
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+
+.nav__link_outer::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg width='11' height='11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.93 8.07l4.95-4.95m0 0H3.64m4.24 0v4.24' stroke='%232C39F2'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  right: 0;
+  @include viewport--sm {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.button-burger-mobile {
+  display: none;
+  padding: 12px;
+  @include viewport--sm {
+    display: block;
+  }
+}
+
+.button-burger-mobile__burger-icon {
+  @include burger(30px, 2px, 6px, $color-neon-blue);
+}
+
+.button-burger-mobile_active {
+  .button-burger-mobile__burger-icon {
+    @include burger-to-cross;
+  }
+}
